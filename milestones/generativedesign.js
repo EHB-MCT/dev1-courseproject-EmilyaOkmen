@@ -12,7 +12,7 @@ draw();
 
 function draw() {
 
-    context.fillStyle = "#ADD8E6"
+    context.fillStyle = "#aadcff"
     context.fillRect(0, 0, width, height);
 
 
@@ -21,8 +21,8 @@ function draw() {
 
 function drawRandomShapes() {
 
-    const columns = 10; 
-    const rows = 10;    
+    const columns = 15; 
+    const rows = 15;    
     const shapeWidth = width / columns;
     const shapeHeight = height / rows;
 
@@ -38,19 +38,15 @@ function drawRandomShapes() {
 
 
 
-let randomColor1= Utils.rgb(Utils.randomNumber(180, 255), Utils.randomNumber(0, 100), Utils.randomNumber(0, 50));
 let randomColor2= Utils.rgb(Utils.randomNumber(180, 255), Utils.randomNumber(120,200), Utils.randomNumber(150,220));
-let randomColor3= Utils.rgb(Utils.randomNumber(50,120), Utils.randomNumber(180,255), Utils.randomNumber(0,100));
+let randomColor3 = Utils.rgb(Utils.randomNumber(100, 200), Utils.randomNumber(0, 100), Utils.randomNumber(100, 200));
 
-context.fillStyle = randomColor1;
-Utils.fillCircle(x, y, shapeWidth / 4);
 
-// Draw ellipse with random color
-context.fillStyle = randomColor2;
+context.fillStyle = randomColor3;
 Utils.fillEllipse(x, y, shapeWidth / 2, shapeHeight / 4);
 
-// Draw other ellipse with random color
-context.fillStyle = randomColor3;
+
+context.fillStyle = randomColor2;
 Utils.fillEllipse(x, y, shapeWidth / 4, shapeHeight / 2);
 
 
