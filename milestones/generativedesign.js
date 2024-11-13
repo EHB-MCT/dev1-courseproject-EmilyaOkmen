@@ -16,32 +16,53 @@ function draw() {
     context.fillRect(0, 0, width, height);
 
 
-    drawRandomShapes(20);
+    drawRandomShapes();
 }
 
-function drawRandomShapes(dragonEye) {
+function drawRandomShapes() {
+
+    const columns = 10; 
+    const rows = 10;    
+    const shapeWidth = width / columns;
+    const shapeHeight = height / rows;
+
+    for (let i = 0; i < columns; i++) {
+        for (let j = 0; j < rows; j++) {
+            let x = i * shapeWidth + shapeWidth / 2;
+            let y = j * shapeHeight + shapeHeight / 2;
+ 
+    /*for (let i = 0; i < dragonEye; i++) {*/
+
+        /*let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;*/
 
 
 
-    for (let i = 0; i < dragonEye; i++) {
-        
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height;
+let randomColor1= Utils.rgb(Utils.randomNumber(180, 255), Utils.randomNumber(0, 100), Utils.randomNumber(0, 50));
+let randomColor2= Utils.rgb(Utils.randomNumber(180, 255), Utils.randomNumber(120,200), Utils.randomNumber(150,220));
+let randomColor3= Utils.rgb(Utils.randomNumber(50,120), Utils.randomNumber(180,255), Utils.randomNumber(0,100));
 
-            
-        
-        let randomColor1 = Utils.rgb(Utils.randomNumber(0, 255), Utils.randomNumber(0, 255), Utils.randomNumber(0, 255));
-        let randomColor2 = Utils.rgb(Utils.randomNumber(0, 255), Utils.randomNumber(0, 255), Utils.randomNumber(0, 255));
-        let randomColor3 = Utils.rgb(Utils.randomNumber(0, 255), Utils.randomNumber(0, 255), Utils.randomNumber(0, 255));
+context.fillStyle = randomColor1;
+Utils.fillCircle(x, y, shapeWidth / 4);
 
-             context.fillStyle = randomColor1;
-             Utils.fillCircle(x, y, 50);
-     
-             context.fillStyle = randomColor2;
-             Utils.fillEllipse(x, y, 25 * 2, 20);
-     
-             context.fillStyle = randomColor3;
-             Utils.fillEllipse(x, y, 50 / 2, 20 * 2);
+// Draw ellipse with random color
+context.fillStyle = randomColor2;
+Utils.fillEllipse(x, y, shapeWidth / 2, shapeHeight / 4);
+
+// Draw other ellipse with random color
+context.fillStyle = randomColor3;
+Utils.fillEllipse(x, y, shapeWidth / 4, shapeHeight / 2);
+
+
+
+        /*context.fillStyle = randomColor1;
+        Utils.fillCircle(x, y, 50);
+
+        context.fillStyle = randomColor2;
+        Utils.fillEllipse(x, y, 25 * 2, 20);
+
+        context.fillStyle = randomColor3;
+        Utils.fillEllipse(x, y, 50 / 2, 20 * 2);*/
 
         /*let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -61,8 +82,8 @@ function drawRandomShapes(dragonEye) {
         Utils.fillEllipse(x, y, 50 / 2, 20 * 2);*/
 
     }
-
-}
+ }
+ }
 
 
 
