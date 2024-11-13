@@ -16,10 +16,10 @@ function draw() {
     context.fillRect(0, 0, width, height);
 
 
-    drawRandomShapes();
+    drawRandomUfos();
 }
 
-function drawRandomShapes() {
+function drawRandomUfos() {
 
     const columns = 15; 
     const rows = 15;    
@@ -31,9 +31,6 @@ function drawRandomShapes() {
             let x = i * shapeWidth + shapeWidth / 2;
             let y = j * shapeHeight + shapeHeight / 2;
 
-
-/*let randomColor2= Utils.rgb(Utils.randomNumber(180, 255), Utils.randomNumber(120,200), Utils.randomNumber(150,220));
-let randomColor1 = Utils.rgb(Utils.randomNumber(100, 200), Utils.randomNumber(0, 100), Utils.randomNumber(100, 200));*/
 let randomColor2 = Utils.rgb(Utils.randomNumber(200, 255), Utils.randomNumber(150, 200), Utils.randomNumber(150, 200));
 let randomColor1 = Utils.rgb(Utils.randomNumber(100, 160), Utils.randomNumber(140, 190), Utils.randomNumber(200, 240)); 
 
