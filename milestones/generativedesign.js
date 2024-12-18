@@ -4,25 +4,36 @@ import * as Utils from "../scripts/utils.js";
 import context from "../scripts/context.js";
 
 
+let ufos = []; //Array voor Ufos
 let width = context.canvas.width;
 let height = context.canvas.height;
 
 
 draw();
+setup();
+Update();
+
+function setup() {
+    winow.onmousemove = mouseMove;
+    context.textAlign = "center"
+    for (let i = 0; i < 50; i++) {
+        ufos.push(createUfo());
+    }
+}
+
+
 
 function draw() {
 
     context.fillStyle = "#fff981"
     context.fillRect(0, 0, width, height);
-
-
-    drawRandomUfos();
 }
+
 
 function drawRandomUfos() {
 
-        //kolom maken met rijen, horizontaal en verticaal 
-    const columns = 15; 
+    //kolom maken met rijen, horizontaal en verticaal 
+    const columns = 15;
     const rows = 15;
     const shapeWidth = width / columns;
     const shapeHeight = height / rows;
@@ -31,8 +42,9 @@ function drawRandomUfos() {
     // j is voor de rijen en i is voor de kolommen
     for (let i = 0; i < columns; i++) {
         for (let j = 0; j < rows; j++) {
-        let x = i * shapeWidth + shapeWidth / 2;
-        let y = j * shapeHeight + shapeHeight / 2;  //even gepositioneerd
+
+            let x = i * shapeWidth + shapeWidth / 2;
+            let y = j * shapeHeight + shapeHeight / 2;//even gepositioneerd
 
             //random pastel kleuren
             let randomColor2 = Utils.rgb(Utils.randomNumber(200, 255),
@@ -48,6 +60,10 @@ function drawRandomUfos() {
             //ELLIPSE/CIRKEL
             context.fillStyle = randomColor2;
             Utils.fillEllipse(x, y, shapeWidth / 4, shapeHeight / 2);
+
+
+
+
 
         }
     }
