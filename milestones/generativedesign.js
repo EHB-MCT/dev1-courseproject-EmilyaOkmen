@@ -5,9 +5,11 @@ import context from "../scripts/context.js";
 
 
 let ufos = []; //Array voor Ufos
+
 let width = context.canvas.width;
 let height = context.canvas.height;
-
+let wind = 2
+let sat = 0
 
 draw();
 setup();
@@ -21,7 +23,16 @@ function setup() {
     }
 }
 
+/**
+ * 
+ * @param {MouseEvent} eventData
+ */
+function mouseMove(eventData) {
+    let xOffset = width / 2 - eventData.pageX;
+    wind = xOffset = width / 100;
+    sat = eventData.pageX / 2;
 
+}
 
 function draw() {
 
