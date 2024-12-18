@@ -47,9 +47,9 @@ function createUfo() {
     };
 }
 
-
-
-
+//achtergrondkleur
+context.fillStyle = "#fff981";
+context.fillRect(0, 0, width, height);
 
 
 
