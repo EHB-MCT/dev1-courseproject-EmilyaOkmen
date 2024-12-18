@@ -51,6 +51,11 @@ function createUfo() {
 context.fillStyle = "#fff981";
 context.fillRect(0, 0, width, height);
 
+//posities van de ufos
+for (let i = ufos.length - 1; i >= 0; i--) {
+    let ufo = ufos[i];
+}
+
 
 
 
