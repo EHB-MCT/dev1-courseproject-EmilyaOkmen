@@ -47,6 +47,22 @@ function createUfo() {
     };
 }
 
+function drawUfo(x, y, size, color1, color2) {
+    function drawUfo(x, y, size, color1, color2) {
+        //grote ellipse
+        context.fillStyle = color1;
+        context.beginPath();
+        context.ellipse(x, y, size, size / 2, 0, 0, Math.PI * 2);
+        context.fill();
+
+        // kleinere ellips in de grote ellipse (vorm van ufo)
+        context.fillStyle = color2;
+        context.beginPath();
+        context.ellipse(x, y - size / 6, size / 2, size / 3, 0, 0, Math.PI * 2);
+        context.fill();
+    }
+}
+
 //achtergrondkleur
 context.fillStyle = "#fff981";
 context.fillRect(0, 0, width, height);
@@ -58,4 +74,5 @@ for (let i = ufos.length - 1; i >= 0; i--) {
 
 
 
+requestAnimationFrame(update);
 
