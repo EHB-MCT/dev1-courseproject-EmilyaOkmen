@@ -33,7 +33,7 @@ function setup() {
  */
 function mouseMove(eventData) {
     let xOffset = width / 2 - eventData.pageX;
-    wind = xOffset = width / 100;
+    wind = xOffset / 100;
     sat = eventData.pageX / 2;
 
 }
