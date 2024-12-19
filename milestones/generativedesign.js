@@ -14,8 +14,6 @@ let sat = 0;
 let width = context.canvas.width;
 let height = context.canvas.height;
 
-
-
 setup();
 Update();
 
@@ -100,5 +98,6 @@ function Update() {
         // Draw the UFO
         drawUfo(ufo.x, ufo.y, ufo.size, ufo.randomColor1, ufo.randomColor2);
     }
+
     requestAnimationFrame(Update);
 }
